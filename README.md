@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NovaPay Fraud Detection — "Catch the Leaks"
 
 ML project to replace NovaPay's rule-based fraud filter (38% recall) with a
@@ -173,3 +174,8 @@ python 02_model_pipeline.py
 | Charts don't open / blank | They're saved as `.png` files in `outputs/figures/` — open via VS Code's Explorer panel, not via the terminal |
 | Want to change cost assumptions ($340 / $25) | Edit `COST_FN` and `COST_FP` constants near the top of `02_model_pipeline.py` |
 | Want to re-run with different random seed | Change `RNG_SEED` in `generate_dataset.py` and `RNG` in `02_model_pipeline.py` |
+=======
+# novapay-fraud-detection
+ML fraud detection model for NovaPay payments — boosts fraud recall from 38% to 85% and quantifies dollar savings vs a rule-based baseline.
+An end-to-end machine learning pipeline that replaces a naive rule-based fraud filter with a trained classifier for a digital payments platform. Tackles class imbalance (6% fraud rate) using SMOTE, compares Logistic Regression vs XGBoost with stratified cross-validation, and tunes the decision threshold to minimize real dollar cost rather than just optimizing accuracy. Translates model performance into business impact — calculating cost savings from reduced false negatives and projecting annualized savings with a bootstrap confidence interval.
+>>>>>>> 9c65114509e38d84c35bdf7607f0f2cc97b4b64a
