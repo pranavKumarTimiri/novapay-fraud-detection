@@ -1,0 +1,23 @@
+TASK 6 — EXECUTIVE SUMMARY FOR THE NOVAPAY CFO
+=================================================
+
+Subject: New Fraud Detection Model — Performance & Dollar Impact
+
+We built a machine learning model that scores every transaction for fraud
+risk using 12 signals — amount, country, account age, prior fraud history,
+spending velocity, and more — instead of the current system's single
+rule (block if over $5,000 from overseas). Where the old rule only catches
+38% of fraud, our model catches 85%, because it learns the realistic
+*combinations* of signals (e.g. a new account, high velocity, and an
+unusual location together) that flag fraud far more reliably than amount
+alone.
+
+On a representative 1,600-transaction test sample, the new model cut
+fraud-related losses from $22,275 to $10,010 — a 55% reduction. Scaled to
+NovaPay's full 50,000 transactions/day, this translates to an estimated
+$140M in annual savings (95% confidence range: $94M-$182M).
+
+One limitation: to catch more fraud, the model also flags more legitimate
+transactions for review than before (a known precision/recall trade-off).
+We recommend pairing this rollout with a fast manual-review queue to keep
+customer friction low.

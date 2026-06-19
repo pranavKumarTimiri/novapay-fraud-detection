@@ -17,9 +17,11 @@ dist/
 # --- Jupyter ---
 .ipynb_checkpoints/
 
-# --- Generated data & outputs (large/regenerable — don't commit) ---
-data/*.csv
-outputs/
+# --- Generated data & outputs ---
+# (Tracked intentionally so results are visible on GitHub without
+#  requiring anyone to run the pipeline first.)
+# data/*.csv
+# outputs/
 *.pkl
 *.joblib
 

@@ -1,0 +1,26 @@
+
+TASK 1 — BUSINESS PROBLEM FRAMING
+==================================
+
+False Negative (missed fraud, model says legit but it was fraud):
+  Cost = $340 per case (chargeback + investigation + customer compensation).
+  This is a DIRECT, GUARANTEED cash loss to NovaPay every single time it happens.
+
+False Positive (wrongly blocked legitimate transaction):
+  Cost = $25 per case (customer service handling + some lost revenue/goodwill).
+  This is a smaller, mostly recoverable cost (the customer can retry, call
+  support, or the txn can be manually approved).
+
+Which metric should we optimise for: PRECISION or RECALL?
+-----------------------------------------------------------
+RECALL. The cost asymmetry is roughly 13.6x ($340 vs $25) in favor of
+catching fraud over avoiding false alarms. A model that misses fraud is far
+more expensive than one that occasionally over-flags a legitimate purchase.
+Given NovaPay lost $2.1M last quarter to undetected fraud, the priority is
+to minimize False Negatives even if that means accepting somewhat more
+False Positives along the way -- as long as the threshold is tuned so the
+combined dollar cost (FN x $340 + FP x $25) keeps shrinking, not just the
+recall number in isolation. So: optimize Recall, but validate every
+threshold choice against Total Dollar Cost (Task 5), since recall pushed
+too far (e.g. flagging everything) would blow up FP costs and customer
+trust without limit.

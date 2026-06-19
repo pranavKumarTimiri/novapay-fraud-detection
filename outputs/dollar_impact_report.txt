@@ -1,0 +1,31 @@
+DOLLAR IMPACT — OLD RULE-BASED SYSTEM vs ML MODEL
+=======================================================
+
+Test set size: 1,600 transactions (96 actual fraud, 1504 actual legit)
+
+Cost weights: False Negative = $340 | False Positive = $25
+
+--- OLD RULE-BASED SYSTEM (38% recall, amount>$5k + overseas IP) ---
+  True Positives (fraud caught):     36
+  False Negatives (fraud missed):    60
+  False Positives (legit blocked):   75
+  True Negatives:                    1429
+  TOTAL COST = (60 x $340) + (75 x $25) = $22,275
+
+--- ML MODEL (XGBoost, threshold=0.09) ---
+  True Positives (fraud caught):     77
+  False Negatives (fraud missed):    19
+  False Positives (legit blocked):   180
+  True Negatives:                    1324
+  TOTAL COST = (19 x $340) + (180 x $25) = $10,960
+  Recall achieved: 80.2%  |  Precision: 30.0%
+
+--- SAVINGS (on this 1600-txn test set) ---
+  Old system cost:  $22,275
+  ML model cost:    $10,960
+  SAVINGS:          $11,315  (50.8% reduction)
+
+--- ANNUALIZED SAVINGS (scaled to 50,000 txn/day, 18,250,000 txn/year) ---
+  Scale factor (annual volume / test set size): 11,406.2x
+  Estimated annual savings: $129,061,719
+  95% Confidence Interval (bootstrap, n=2000): $85,261,719 to $170,131,348
