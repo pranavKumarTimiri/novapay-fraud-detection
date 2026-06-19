@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # NovaPay Fraud Detection — "Catch the Leaks"
 
 ML project to replace NovaPay's rule-based fraud filter (38% recall) with a
