@@ -1,0 +1,41 @@
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Python cache/build artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Generated data & outputs (large/regenerable — don't commit) ---
+data/*.csv
+outputs/
+*.pkl
+*.joblib
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs / temp ---
+*.log
+*.tmp
+
+# --- Environment / secrets ---
+.env
+.env.local
